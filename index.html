@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>What is the Web?</title>
+</head>
+<body>
+  <!-- 菜单按钮 -->
+  <button class="menu-toggle">☰ Menu</button>
+  
+  <!-- 侧边栏导航 -->
+  <nav>
+    <h1>Web Basics</h1>
+    <ul>
+      <li><a href="#definition" class="nav-link">Definition</a></li>
+      <li><a href="#history" class="nav-link">History</a></li>
+      <li><a href="#components" class="nav-link">Components</a></li>
+      <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+    </ul>
+  </nav>
+  
+  <!-- 遮罩层 -->
+  <div class="overlay"></div>
+  
+  <!-- 主内容 -->
+  <main>
+    <section id="definition">
+      <h2>What is the Web?</h2>
+      <p>The World Wide Web (WWW), commonly known as the Web, is an information system where documents and other web resources are identified by Uniform Resource Locators (URLs), interlinked by hypertext links, and accessible over the Internet.</p>
+      <p>It is important to note that the Web is not the same as the Internet. The Internet is a global network of networks, while the Web is one of the services that runs on top of the Internet.</p>
+    </section>
+    
+    <section id="history">
+      <h2>History of the Web</h2>
+      <p>The Web was invented by Tim Berners-Lee in 1989 while working at CERN, the European Organization for Nuclear Research.</p>
+      <p>It was originally designed to facilitate information sharing between scientists worldwide, allowing them to easily access and update each other's research papers and data.</p>
+      <p>The first website went live in 1991, and since then, the Web has evolved dramatically, transforming from a simple document-sharing system to a global platform for communication, commerce, entertainment, and more.</p>
+    </section>
+    
+    <section id="components">
+      <h2>Key Components</h2>
+      <ul>
+        <li>HTML (HyperText Markup Language) - for structuring content</li>
+        <li>HTTP (HyperText Transfer Protocol) - for communication between browsers and servers</li>
+        <li>URLs (Uniform Resource Locators) - for identifying resources on the Web</li>
+        <li>Web browsers - software applications for accessing and displaying content</li>
+        <li>Web servers - computers that host and deliver web content</li>
+        <li>CSS (Cascading Style Sheets) - for styling and formatting web content</li>
+        <li>JavaScript - for adding interactivity to web pages</li>
+      </ul>
+    </section>
+    
+    <section id="how-it-works">
+      <h2>How the Web Works</h2>
+      <ol>
+        <li>A user enters a URL into a web browser or clicks on a link</li>
+        <li>The browser resolves the domain name to an IP address using DNS (Domain Name System)</li>
+        <li>The browser sends an HTTP request to the web server at that IP address</li>
+        <li>The server processes the request and sends back an HTTP response, typically containing HTML, CSS, and JavaScript files</li>
+        <li>The browser renders the received files into a visual web page</li>
+        <li>Additional resources like images or videos may be requested and loaded as needed</li>
+      </ol>
+    </section>
+    
+    <footer>
+      <p>Learn more about the Web through online resources and tutorials.</p>
+      <p>&copy; 2023 Web Basics Introduction</p>
+    </footer>
+  </main>
+
+  <script>
+    // 获取元素
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+    const overlay = document.querySelector('.overlay');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    // 切换侧边栏显示/隐藏
+    function toggleSidebar() {
+      nav.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+      overlay.classList.toggle('active');
+    }
+    
+    // 点击菜单按钮切换侧边栏
+    menuToggle.addEventListener('click', toggleSidebar);
+    
+    // 点击遮罩层关闭侧边栏
+    overlay.addEventListener('click', toggleSidebar);
+    
+    // 点击导航链接后关闭侧边栏
+    navLinks.forEach(link => {
+      link.addEventListener('click', toggleSidebar);
+    });
+  </script>
+</body>
+</html>
+    
